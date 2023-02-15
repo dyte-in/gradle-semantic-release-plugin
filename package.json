@@ -1,6 +1,6 @@
 {
   "name": "gradle-semantic-release-plugin",
-  "version": "2.0.0-dyte",
+  "version": "2.1.0-dyte",
   "description": "Automated release management for Gradle project",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
