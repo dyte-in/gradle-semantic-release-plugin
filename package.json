@@ -1,6 +1,6 @@
 {
   "name": "gradle-semantic-release-plugin",
-  "version": "1.7.6",
+  "version": "2.0.0-dyte",
   "description": "Automated release management for Gradle project",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -17,7 +17,7 @@
     "LICENSE",
     "lib"
   ],
-  "author": "Kengo TODA",
+  "author": "Kengo TODA/Dyte Inc",
   "license": "MIT",
   "private": false,
   "scripts": {
