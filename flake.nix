@@ -18,6 +18,6 @@
       pkgs = import nixpkgs {inherit system;};
     in {
       devShells.default =
-        pkgs.mkShell {nativeBuildInputs = with pkgs; [nodejs-16_x];};
+        pkgs.mkShell {nativeBuildInputs = with pkgs; [nodejs];};
     });
 }
