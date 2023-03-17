@@ -103,10 +103,7 @@ describe("Test for gradle handling", function () {
         process.env,
         new Signale()
       );
-      expect(task).toEqual([
-        "publishAllPublicationsToMavenCentralRepository",
-        "closeAndReleaseRepository",
-      ]);
+      expect(task).toEqual(["publishAllPublicationsToMavenCentralRepository"]);
     });
   });
 

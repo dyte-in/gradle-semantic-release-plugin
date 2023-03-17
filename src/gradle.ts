@@ -106,10 +106,7 @@ export function getTaskToPublish(
           line.startsWith("publishAllPublicationsToMavenCentralRepository")
         ) {
           if (tasks.length !== 0 && tasks[0] === "publish") {
-            tasks = [
-              "publishAllPublicationsToMavenCentralRepository",
-              "closeAndReleaseRepository",
-            ];
+            tasks = ["publishAllPublicationsToMavenCentralRepository"];
           }
           if (
             tasks.length !== 0 &&
