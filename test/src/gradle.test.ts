@@ -144,9 +144,10 @@ describe("Test for gradle handling", function () {
     });
   });
   describe("buildOptions()", () => {
-    it("returns an empty array", () => {
+    it("Adds stacktrace", () => {
       const result = buildOptions({});
-      expect(result).toHaveLength(0);
+      expect(result).toHaveLength(1);
+      expect(result).toContain("--stacktrace");
     });
     it("adds project properties when specific there is envvar", () => {
       const env = process.env;
