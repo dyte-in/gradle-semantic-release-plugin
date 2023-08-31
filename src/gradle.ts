@@ -194,6 +194,7 @@ export function buildOptions(env: NodeJS.ProcessEnv): string[] {
     options.push(`-Pgradle.publish.secret=${env["GRADLE_PUBLISH_SECRET"]}`);
   }
   options.push("--stacktrace");
+  options.push("--no-configuration-cache");
   /* tslint:enable:no-string-literal */
   return options;
 }

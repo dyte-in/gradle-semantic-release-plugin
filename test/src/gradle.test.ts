@@ -144,10 +144,11 @@ describe("Test for gradle handling", function () {
     });
   });
   describe("buildOptions()", () => {
-    it("Adds stacktrace", () => {
+    it("Adds stacktrace and disables CC", () => {
       const result = buildOptions({});
-      expect(result).toHaveLength(1);
+      expect(result).toHaveLength(2);
       expect(result).toContain("--stacktrace");
+      expect(result).toContain("--no-configuration-cache");
     });
     it("adds project properties when specific there is envvar", () => {
       const env = process.env;
