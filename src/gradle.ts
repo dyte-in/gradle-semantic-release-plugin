@@ -40,7 +40,7 @@ export function getCommand(cwd: string): Promise<string> {
 export function getTaskToPublish(
   cwd: string,
   env: NodeJS.ProcessEnv,
-  logger: Signale
+  logger: Signale,
 ): Promise<string[]> {
   return new Promise(async (resolve, reject) => {
     const command = await getCommand(cwd);
@@ -51,7 +51,7 @@ export function getTaskToPublish(
     });
     if (child.stdout === null || child.stderr == null) {
       reject(
-        new Error("Unexpected error: stdout or stderr of subprocess is null")
+        new Error("Unexpected error: stdout or stderr of subprocess is null"),
       );
     } else {
       let tasks: string[] = [];
@@ -125,8 +125,8 @@ export function getTaskToPublish(
         if (code !== 0) {
           reject(
             new Error(
-              `Unexpected error: Gradle failed with status code ${code}`
-            )
+              `Unexpected error: Gradle failed with status code ${code}`,
+            ),
           );
         }
         resolve(tasks);
@@ -144,7 +144,7 @@ export function getTaskToPublish(
  */
 export function getVersion(
   cwd: string,
-  env: NodeJS.ProcessEnv
+  env: NodeJS.ProcessEnv,
 ): Promise<string> {
   return new Promise(async (resolve, reject) => {
     const command = await getCommand(cwd);
@@ -171,8 +171,8 @@ export function getVersion(
         if (code !== 0) {
           reject(
             new Error(
-              `Unexpected error: Gradle failed with status code ${code}`
-            )
+              `Unexpected error: Gradle failed with status code ${code}`,
+            ),
           );
         }
         resolve(version);
@@ -202,7 +202,7 @@ export function buildOptions(env: NodeJS.ProcessEnv): string[] {
 export function publishArtifact(
   cwd: string,
   env: NodeJS.ProcessEnv,
-  logger: Signale
+  logger: Signale,
 ) {
   return new Promise(async (resolve, reject) => {
     const command = getCommand(cwd);
